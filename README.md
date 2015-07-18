@@ -27,3 +27,5 @@ install.packages("ggmap")
 ```r:
 shiny::runGitHub("naokifuse/water_supply_sites_yokohama")
 ```
+
+or visit [shinyapps.io](https://naokifuse.shinyapps.io/water_supply_sites_yokohama).
