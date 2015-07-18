@@ -19,7 +19,7 @@ shinyServer(function (input, output) {
     df
   })
 
-  # with leftlet 
+  # with leaflet
   output$water_leaf <- renderLeaflet({
     df <- filter_df()
     leaflet() %>%
