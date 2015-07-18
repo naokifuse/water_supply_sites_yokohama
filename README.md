@@ -2,14 +2,15 @@
 
 ## Shiny app
 My first [shiny](http://shiny.rstudio.com) app to draw maps of water supply sites in Yokohama, Japan.
-Dataset is available at [Open Data Catalog](http://www.city.yokohama.lg.jp/seisaku/seisaku/opendata/catalog.html).
+
+Dataset is available at [Open Data Catalog in Yokohama](http://www.city.yokohama.lg.jp/seisaku/seisaku/opendata/catalog.html).
 
 ## Method to draw maps
 * [leaflet](https://github.com/rstudio/leaflet)
 * [ggvis](https://github.com/rstudio/ggvis)
 * [ggmap](https://github.com/dkahle/ggmap)
 
-## Required library
+## Required packages
 All available at CRAN.
 
 ```r:
