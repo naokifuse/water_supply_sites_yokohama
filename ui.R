@@ -3,6 +3,10 @@
 # ui.R
 # -----------------------------------------------
 
+a_blank <- function (name, href) {
+  HTML(sprintf('<a href="%s" target="_blank">%s</a>', href, name))
+}
+
 shinyUI(fluidPage(
   titlePanel("Water Supply Sites in Yokohama, Japan"), 
   
@@ -24,29 +28,29 @@ shinyUI(fluidPage(
       br(), 
       br(), 
       p("このサイトは横浜市のオープンデータを用いています", br(), "詳しくは", 
-        a("よこはまオープンデータカタログ", 
-          href="http://www.city.yokohama.lg.jp/seisaku/seisaku/opendata/catalog.html"), "へ"), 
+        a_blank("よこはまオープンデータカタログ", 
+                "http://www.city.yokohama.lg.jp/seisaku/seisaku/opendata/catalog.html"), "へ"), 
       br(), 
       p("Source on ", 
-        a("GitHub;", href="https://github.com/naokifuse/water_supply_sites_yokohama"), 
+        a_blank("GitHub;", "https://github.com/naokifuse/water_supply_sites_yokohama"), 
         "Powered by ", 
-        a("shiny", href="http://shiny.rstudio.com"))
+        a_blank("shiny", "http://shiny.rstudio.com"))
     ), 
     
     mainPanel(
       tabsetPanel(
         id="tabsetpanel1", 
         tabPanel("leaflet", 
-                 h4("Render with", a("leaflet", href="https://github.com/rstudio/leaflet")), 
+                 h4("Render with", a_blank("leaflet", href="https://github.com/rstudio/leaflet")), 
                  fluidRow(column(10, leafletOutput("water_leaf")))
                  ),
         tabPanel("ggvis", 
-                 h4("Render with", a("ggvis", href="https://github.com/rstudio/ggvis")), 
+                 h4("Render with", a_blank("ggvis", href="https://github.com/rstudio/ggvis")), 
                  fluidRow(column(10, ggvisOutput("water_vis"))), 
                  p(br(), "TODO: render with map")
                  ), 
         tabPanel("ggmap",
-                 h4("Render with", a("ggmap", href="https://github.com/dkahle/ggmap")), 
+                 h4("Render with", a_blank("ggmap", href="https://github.com/dkahle/ggmap")), 
                  fluidRow(column(10,
                                  radioButtons("ggmap.source", "Options", 
                                               choices=list("ggmap", "ggplot"), 
