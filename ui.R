@@ -4,7 +4,7 @@
 # -----------------------------------------------
 
 a_blank <- function (name, href) {
-  HTML(sprintf('<a href="%s" target="_blank">%s</a>', href, name))
+  a(name, href=href, target="_blank")
 }
 
 shinyUI(fluidPage(
